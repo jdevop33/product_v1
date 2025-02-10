@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 232 46% 20%;
+    
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 232 46% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 46% 20%;
+    
+    /* Primary color (Governor Bay-600) */
+    --primary: 248 59% 58%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary color (Fun Green-600 for accents) */
+    --secondary: 153 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted (very light Governor Bay) */
+    --muted: 240 93% 98%;
+    --muted-foreground: 232 30% 45%;
+    
+    /* Accent (light Governor Bay) */
+    --accent: 248 59% 96%;
+    --accent-foreground: 248 59% 58%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border and input colors */
+    --border: 240 93% 94%;
+    --input: 240 93% 94%;
+    --ring: 248 59% 58%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --warning: 45 93% 47%;
+    --error: 0 84% 60%;
+
+    /* Chart Colors */
+    --chart-1: 248 59% 58%;
+    --chart-2: 153 100% 40%;
+    --chart-3: 248 45% 45%;
+    --chart-4: 153 71% 29%;
+    --chart-5: 248 35% 35%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for cards */
+.dashboard-card {
+  @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+}
+
+/* Custom styles for status badges */
+.status-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset;
+}
+
+.status-badge-success {
+  @apply bg-[#ecfff3] text-[#00a040] ring-[#00a040]/20;
+}
+
+.status-badge-warning {
+  @apply bg-yellow-50 text-yellow-800 ring-yellow-600/20;
+}
+
+/* Custom gradients */
+.gradient-primary {
+  @apply bg-gradient-to-r from-[#6256d5] to-[#7371e3];
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-[#00ce4e] to-[#00f663];
+}
